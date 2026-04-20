@@ -1,0 +1,56 @@
+2026-04-20 04:11:17 | stage3_ml            | INFO     | 
+============================================================
+[TRIM22] ML analysis: 210 compounds
+2026-04-20 04:11:17 | stage3_ml            | INFO     | Generated morgan fingerprints: (210, 2048) for 210 compounds
+2026-04-20 04:11:17 | stage3_ml            | INFO     | Activity labels: 131 active, 79 inactive (cutoff pIC50=6.3)
+2026-04-20 04:11:17 | stage3_ml            | INFO     | [TRIM22] Training classifier: Random Forest
+2026-04-20 04:11:24 | stage3_ml            | INFO     | [TRIM22] Random Forest: AUC=0.493±0.056, Sens=0.560, Spec=0.372
+2026-04-20 04:11:25 | stage3_ml            | INFO     | [TRIM22] Training classifier: XGBoost
+2026-04-20 04:11:32 | stage3_ml            | INFO     | [TRIM22] XGBoost: AUC=0.489±0.053, Sens=0.835, Spec=0.206
+2026-04-20 04:11:33 | stage3_ml            | INFO     | [TRIM22] Training classifier: SVM (RBF)
+2026-04-20 04:11:33 | stage3_ml            | INFO     | [TRIM22] SVM (RBF): AUC=0.457±0.070, Sens=0.899, Spec=0.118
+2026-04-20 04:11:34 | stage3_ml            | INFO     | [TRIM22] Training classifier: Neural Network
+2026-04-20 04:11:45 | stage3_ml            | INFO     | [TRIM22] Neural Network: AUC=0.494±0.079, Sens=0.927, Spec=0.036
+2026-04-20 04:11:49 | stage3_ml            | INFO     | [TRIM22] Training classifier: Gradient Boosting
+2026-04-20 04:11:51 | stage3_ml            | INFO     | [TRIM22] Gradient Boosting: AUC=0.500±0.061, Sens=0.813, Spec=0.271
+2026-04-20 04:11:52 | stage3_ml            | INFO     | [TRIM22] Training regressor: Random Forest
+2026-04-20 04:11:53 | stage3_ml            | INFO     | [TRIM22] Random Forest Regressor: R²=-0.350, MAE=1.283
+2026-04-20 04:11:54 | stage3_ml            | INFO     | Saved regression scatter: /home/claude/drug_pipeline/figures/TRIM22_Random_Forest_regression.pdf
+2026-04-20 04:11:54 | stage3_ml            | INFO     | [TRIM22] Training regressor: XGBoost
+2026-04-20 04:11:56 | stage3_ml            | INFO     | [TRIM22] XGBoost Regressor: R²=-0.365, MAE=1.288
+2026-04-20 04:11:57 | stage3_ml            | INFO     | Saved regression scatter: /home/claude/drug_pipeline/figures/TRIM22_XGBoost_regression.pdf
+2026-04-20 04:11:57 | stage3_ml            | INFO     | [TRIM22] Training regressor: Neural Network
+2026-04-20 04:11:59 | stage3_ml            | INFO     | [TRIM22] Neural Network Regressor: R²=-0.581, MAE=1.370
+2026-04-20 04:12:00 | stage3_ml            | INFO     | Saved regression scatter: /home/claude/drug_pipeline/figures/TRIM22_Neural_Network_regression.pdf
+2026-04-20 04:12:00 | stage3_ml            | INFO     | [TRIM22] Best classifier: SVM (RBF) (test AUC=0.387)
+2026-04-20 04:12:00 | stage3_ml            | INFO     | [TRIM22] Best regressor: Random Forest (test R²=-0.350)
+2026-04-20 04:12:01 | stage3_ml            | INFO     | Saved ROC curves: /home/claude/drug_pipeline/figures/TRIM22_roc_curves.pdf
+2026-04-20 04:12:01 | stage3_ml            | WARNING  | [TRIM22] Some plots failed: 'ErrorbarContainer' object has no attribute 'patches'
+2026-04-20 04:12:01 | stage3_ml            | INFO     | 
+============================================================
+[PPP2R5A] ML analysis: 210 compounds
+2026-04-20 04:12:01 | stage3_ml            | INFO     | Generated morgan fingerprints: (210, 2048) for 210 compounds
+2026-04-20 04:12:01 | stage3_ml            | INFO     | Activity labels: 131 active, 79 inactive (cutoff pIC50=6.3)
+2026-04-20 04:12:01 | stage3_ml            | INFO     | [PPP2R5A] Training classifier: Random Forest
+2026-04-20 04:12:08 | stage3_ml            | INFO     | [PPP2R5A] Random Forest: AUC=0.488±0.067, Sens=0.417, Spec=0.574
+2026-04-20 04:12:10 | stage3_ml            | INFO     | [PPP2R5A] Training classifier: XGBoost
+2026-04-20 04:12:16 | stage3_ml            | INFO     | [PPP2R5A] XGBoost: AUC=0.497±0.082, Sens=0.896, Spec=0.078
+2026-04-20 04:12:17 | stage3_ml            | INFO     | [PPP2R5A] Training classifier: SVM (RBF)
+2026-04-20 04:12:18 | stage3_ml            | INFO     | [PPP2R5A] SVM (RBF): AUC=0.502±0.126, Sens=0.935, Spec=0.048
+2026-04-20 04:12:18 | stage3_ml            | INFO     | [PPP2R5A] Training classifier: Neural Network
+2026-04-20 04:12:25 | stage3_ml            | INFO     | [PPP2R5A] Neural Network: AUC=0.480±0.070, Sens=0.927, Spec=0.048
+2026-04-20 04:12:27 | stage3_ml            | INFO     | [PPP2R5A] Training classifier: Gradient Boosting
+2026-04-20 04:12:29 | stage3_ml            | INFO     | [PPP2R5A] Gradient Boosting: AUC=0.481±0.107, Sens=0.843, Spec=0.137
+2026-04-20 04:12:30 | stage3_ml            | INFO     | [PPP2R5A] Training regressor: Random Forest
+2026-04-20 04:12:31 | stage3_ml            | INFO     | [PPP2R5A] Random Forest Regressor: R²=-0.025, MAE=1.300
+2026-04-20 04:12:32 | stage3_ml            | INFO     | Saved regression scatter: /home/claude/drug_pipeline/figures/PPP2R5A_Random_Forest_regression.pdf
+2026-04-20 04:12:32 | stage3_ml            | INFO     | [PPP2R5A] Training regressor: XGBoost
+2026-04-20 04:12:33 | stage3_ml            | INFO     | [PPP2R5A] XGBoost Regressor: R²=-0.036, MAE=1.307
+2026-04-20 04:12:34 | stage3_ml            | INFO     | Saved regression scatter: /home/claude/drug_pipeline/figures/PPP2R5A_XGBoost_regression.pdf
+2026-04-20 04:12:34 | stage3_ml            | INFO     | [PPP2R5A] Training regressor: Neural Network
+2026-04-20 04:12:36 | stage3_ml            | INFO     | [PPP2R5A] Neural Network Regressor: R²=-0.075, MAE=1.351
+2026-04-20 04:12:37 | stage3_ml            | INFO     | Saved regression scatter: /home/claude/drug_pipeline/figures/PPP2R5A_Neural_Network_regression.pdf
+2026-04-20 04:12:37 | stage3_ml            | INFO     | [PPP2R5A] Best classifier: Neural Network (test AUC=0.719)
+2026-04-20 04:12:38 | stage3_ml            | INFO     | [PPP2R5A] Best regressor: Random Forest (test R²=-0.025)
+2026-04-20 04:12:39 | stage3_ml            | INFO     | Saved ROC curves: /home/claude/drug_pipeline/figures/PPP2R5A_roc_curves.pdf
+2026-04-20 04:12:39 | stage3_ml            | WARNING  | [PPP2R5A] Some plots failed: 'ErrorbarContainer' object has no attribute 'patches'
