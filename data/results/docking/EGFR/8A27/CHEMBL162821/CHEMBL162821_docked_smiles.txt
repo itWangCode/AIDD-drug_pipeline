@@ -1,0 +1,37 @@
+========================================================================
+  DOCKING RESULTS
+  Compound  : CHEMBL162821
+  PDB target: 8A27
+========================================================================
+
+SMILES:
+  CNc1cc2c(Nc3cccc(C)c3)ncnc2cn1
+
+Binding Pocket:
+  Reference ligand / pocket : KY9
+  Box center  : (23.815, -10.622, -11.554) Angstrom
+  Box size    : 30.2 x 20.1 x 26.0 Angstrom
+  Atoms used  : 48
+
+Pose    Affinity (kcal/mol)     RMSD lb (A)     RMSD ub (A)   
+------------------------------------------------------------
+1       -8.883                  -8.883          0.000         
+2       -8.866                  -8.866          0.000         
+3       -8.275                  -8.275          0.000         
+4       -8.162                  -8.162          0.000         
+5       -8.022                  -8.022          0.000         
+6       -8.009                  -8.009          0.000         
+7       -7.786                  -7.786          0.000         
+8       -7.343                  -7.343          0.000         
+9       -7.252                  -7.252          0.000         
+
+Best binding affinity (Pose 1) : -8.883 kcal/mol
+
+Files in this directory:
+  CHEMBL162821_ligand.pdbqt         — prepared ligand PDBQT
+  CHEMBL162821_docked_all.pdbqt     — all 9 poses (multi-MODEL)
+  CHEMBL162821_pose_1.pdbqt         — best pose
+  CHEMBL162821_pose_9.pdbqt       — worst pose
+  CHEMBL162821_best_pose.pdbqt      — best pose (single MODEL)
+  CHEMBL162821_complex.pdb          — protein + best pose (PyMOL ready)
+========================================================================

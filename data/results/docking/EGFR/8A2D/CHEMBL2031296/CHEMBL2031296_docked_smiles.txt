@@ -1,0 +1,37 @@
+========================================================================
+  DOCKING RESULTS
+  Compound  : CHEMBL2031296
+  PDB target: 8A2D
+========================================================================
+
+SMILES:
+  CC(=O)Nc1ccc2ncnc(Nc3cccc(Br)c3)c2c1
+
+Binding Pocket:
+  Reference ligand / pocket : KXY
+  Box center  : (-2.672, -10.605, 21.108) Angstrom
+  Box size    : 30.7 x 23.2 x 24.2 Angstrom
+  Atoms used  : 49
+
+Pose    Affinity (kcal/mol)     RMSD lb (A)     RMSD ub (A)   
+------------------------------------------------------------
+1       -8.716                  -8.716          0.000         
+2       -8.643                  -8.643          0.000         
+3       -8.394                  -8.394          0.000         
+4       -8.316                  -8.316          0.000         
+5       -8.195                  -8.195          0.000         
+6       -8.064                  -8.064          0.000         
+7       -7.391                  -7.391          0.000         
+8       -6.976                  -6.976          0.000         
+9       -6.607                  -6.607          0.000         
+
+Best binding affinity (Pose 1) : -8.716 kcal/mol
+
+Files in this directory:
+  CHEMBL2031296_ligand.pdbqt         — prepared ligand PDBQT
+  CHEMBL2031296_docked_all.pdbqt     — all 9 poses (multi-MODEL)
+  CHEMBL2031296_pose_1.pdbqt         — best pose
+  CHEMBL2031296_pose_9.pdbqt       — worst pose
+  CHEMBL2031296_best_pose.pdbqt      — best pose (single MODEL)
+  CHEMBL2031296_complex.pdb          — protein + best pose (PyMOL ready)
+========================================================================

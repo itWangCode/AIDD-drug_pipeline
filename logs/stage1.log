@@ -8,3 +8,5 @@
 2026-04-21 12:16:48 | stage1_data_acquisition | INFO     | [EGFR] ChEMBL target: CHEMBL203
 2026-04-21 12:16:48 | stage1_data_acquisition | INFO     | Fetching bioactivities for CHEMBL203...
 2026-04-21 12:16:49 | stage1_data_acquisition | INFO     |   Total activities: 17036
+2026-04-21 12:18:20 | stage1_data_acquisition | INFO     | [EGFR] Preprocessed bioactivities: 9996
+2026-04-21 12:21:58 | stage1_data_acquisition | INFO     | [EGFR] Final compounds: 9979

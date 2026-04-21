@@ -1,0 +1,18 @@
+2026-04-21 12:37:07 | stage5_interactions  | INFO     | Stage 5: analysing 1 genes: ['EGFR']
+2026-04-21 12:37:07 | stage5_interactions  | INFO     | [EGFR] Analysing 10 top complexes (TOP_N_DOCKING=10)
+2026-04-21 12:37:07 | stage5_interactions  | INFO     |   [EGFR] CHEMBL5968640 | affinity=-11.092 | complex=CHEMBL5968640_complex.pdb
+2026-04-21 12:37:10 | stage5_interactions  | INFO     |   [EGFR] CHEMBL5997498 | affinity=-11.004 | complex=CHEMBL5997498_complex.pdb
+2026-04-21 12:37:12 | stage5_interactions  | INFO     |   [EGFR] CHEMBL5786982 | affinity=-10.823 | complex=CHEMBL5786982_complex.pdb
+2026-04-21 12:37:13 | stage5_interactions  | INFO     |   [EGFR] CHEMBL176582 | affinity=-10.686 | complex=CHEMBL176582_complex.pdb
+2026-04-21 12:37:14 | stage5_interactions  | INFO     |   [EGFR] CHEMBL3623279 | affinity=-10.556 | complex=CHEMBL3623279_complex.pdb
+2026-04-21 12:37:15 | stage5_interactions  | INFO     |   [EGFR] CHEMBL162034 | affinity=-10.511 | complex=CHEMBL162034_complex.pdb
+2026-04-21 12:37:17 | stage5_interactions  | INFO     |   [EGFR] CHEMBL174426 | affinity=-10.508 | complex=CHEMBL174426_complex.pdb
+2026-04-21 12:37:18 | stage5_interactions  | INFO     |   [EGFR] CHEMBL5790648 | affinity=-10.419 | complex=CHEMBL5790648_complex.pdb
+2026-04-21 12:37:19 | stage5_interactions  | INFO     |   [EGFR] CHEMBL5790648 | affinity=-10.261 | complex=CHEMBL5790648_complex.pdb
+2026-04-21 12:37:20 | stage5_interactions  | INFO     |   [EGFR] CHEMBL2031297 | affinity=-10.261 | complex=CHEMBL2031297_complex.pdb
+2026-04-21 12:37:24 | stage5_interactions  | INFO     | Saved: EGFR_interaction_profile.pdf
+2026-04-21 12:37:25 | stage5_interactions  | INFO     | Saved: EGFR_interaction_heatmap.pdf
+2026-04-21 12:37:26 | stage5_interactions  | INFO     | Saved: EGFR_CHEMBL5968640_network.pdf
+2026-04-21 12:37:26 | stage5_interactions  | INFO     | Saved: EGFR_CHEMBL5997498_network.pdf
+2026-04-21 12:37:27 | stage5_interactions  | INFO     | Saved: EGFR_CHEMBL5786982_network.pdf
+2026-04-21 12:37:29 | stage5_interactions  | INFO     | Saved: final_summary_all_genes.pdf

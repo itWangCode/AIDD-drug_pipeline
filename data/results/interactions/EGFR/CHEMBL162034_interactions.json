@@ -1,0 +1,29 @@
+{
+  "mol_id": "CHEMBL162034",
+  "pdb_id": "8A27",
+  "affinity": -10.511,
+  "pIC50": 8.958607314841775,
+  "residues": {
+    "hydrophobic": [
+      "726",
+      "745",
+      "790",
+      "797",
+      "800",
+      "841",
+      "844",
+      "855",
+      "ARG841",
+      "ASP800",
+      "ASP855",
+      "CYS797",
+      "LEU844",
+      "LYS745",
+      "THR790",
+      "VAL726"
+    ]
+  },
+  "n_interactions": {
+    "hydrophobic": 16
+  }
+}

@@ -1,0 +1,16 @@
+2026-04-21 12:21:59 | stage2_filtering     | INFO     | 
+============================================================
+[EGFR] Starting filtration pipeline (n=9979 compounds)
+2026-04-21 12:22:01 | stage2_filtering     | INFO     | [EGFR] Valid SMILES: 9979
+2026-04-21 12:22:01 | stage2_filtering     | INFO     | Calculating molecular properties...
+2026-04-21 12:22:30 | stage2_filtering     | INFO     | Properties calculated for 9979 compounds
+2026-04-21 12:22:30 | stage2_filtering     | INFO     | Ro5 filter: 7148/9979 compounds pass (71.6%)
+2026-04-21 12:22:30 | stage2_filtering     | INFO     | ADMET filter: 4288/9979 compounds pass (43.0%)
+2026-04-21 12:23:04 | stage2_filtering     | INFO     | PAINS filter: 797 compounds flagged, 9182 pass
+2026-04-21 12:23:07 | stage2_filtering     | INFO     | Brenk filter: 6001 compounds flagged, 3978 pass
+2026-04-21 12:23:07 | stage2_filtering     | INFO     | Combined filters: 1635/9979 compounds pass ALL filters (16.4%)
+2026-04-21 12:23:07 | stage2_filtering     | INFO     | [EGFR] Filter summary: {'Raw (valid SMILES)': 9979, 'After property calc.': 9979, 'After Ro5': 7148, 'After ADMET': 4244, 'After PAINS': 3923, 'Passed All Filters': 1635}
+2026-04-21 12:23:10 | stage2_filtering     | INFO     | Saved Ro5 radar: /Users/wangyang/Desktop/drug_pipeline/figures/EGFR_ro5_radar.pdf
+2026-04-21 12:23:13 | stage2_filtering     | INFO     | Saved property distributions: /Users/wangyang/Desktop/drug_pipeline/figures/EGFR_property_distributions.pdf
+2026-04-21 12:23:14 | stage2_filtering     | INFO     | Saved filtering funnel: /Users/wangyang/Desktop/drug_pipeline/figures/EGFR_filtering_funnel.pdf
+2026-04-21 12:23:15 | stage2_filtering     | INFO     | Saved pIC50 distribution: /Users/wangyang/Desktop/drug_pipeline/figures/EGFR_pic50_distribution.pdf
