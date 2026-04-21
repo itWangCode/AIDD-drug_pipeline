@@ -149,103 +149,134 @@ def run_plip_on_complex(complex_pdb: Path) -> Dict:
         return {}
 
 
-def _geometry_fallback(complex_pdb: Path) -> Dict:
+def _parse_pdb_atoms(pdb_path):
     """
-    Geometry-based interaction detection when PLIP is not available.
-    Identifies interactions by distance thresholds between protein and
-    ligand atoms.
+    Parse ATOM/HETATM from PDB using pure Python (no RDKit, no PLIP needed).
+    Ligand = resname LIG or chain L. Returns (protein_list, ligand_list).
+    Each atom is a dict: name, resn, chain, resi, x, y, z, elem.
+    """
+    protein = []
+    ligand  = []
+    with open(pdb_path) as fh:
+        for line in fh:
+            rec = line[:6].strip()
+            if rec not in ("ATOM", "HETATM"):
+                continue
+            if len(line) < 54:
+                continue
+            try:
+                atom = {
+                    "name":  line[12:16].strip(),
+                    "resn":  line[17:20].strip(),
+                    "chain": line[21].strip(),
+                    "resi":  int(line[22:26]),
+                    "x":     float(line[30:38]),
+                    "y":     float(line[38:46]),
+                    "z":     float(line[46:54]),
+                    "elem":  line[76:78].strip().upper() if len(line) >= 78 else "",
+                }
+                if atom["resn"] == "LIG" or atom["chain"] == "L":
+                    ligand.append(atom)
+                else:
+                    protein.append(atom)
+            except (ValueError, IndexError):
+                continue
+    return protein, ligand
+
+
+def _geometry_fallback(complex_pdb):
+    """
+    Geometry-based interaction analysis — no PLIP, no RDKit needed.
+    Pure Python distance calculations on parsed PDB coordinates.
 
     Thresholds (Angstrom):
-      Hydrophobic : C-C  <= 4.5
-      H-bond      : N/O donor … acceptor <= 3.5
-      Halogen     : halogen … O/N <= 3.5
+      Hydrophobic : C...C   <= 4.5
+      H-bond      : N/O...N/O <= 3.5
+      Salt bridge : N...O   <= 5.0
+      Halogen     : X...N/O <= 3.5
     """
-    try:
-        from rdkit import Chem
-        from rdkit.Chem import AllChem
-    except ImportError:
-        return {}
+    import math
 
     try:
-        mol = Chem.MolFromPDBFile(str(complex_pdb), removeHs=False, sanitize=False)
-        if mol is None:
-            return {}
-
-        conf = mol.GetConformer()
-        protein_atoms = []
-        ligand_atoms  = []
-
-        for atom in mol.GetAtoms():
-            mi = atom.GetMonomerInfo()
-            if mi is None:
-                continue
-            chain = mi.GetChainId()
-            resn  = mi.GetResidueName().strip()
-            if resn == "LIG" or chain == "L":
-                ligand_atoms.append(atom.GetIdx())
-            else:
-                protein_atoms.append(atom.GetIdx())
-
-        if not ligand_atoms or not protein_atoms:
-            return {}
-
-        interactions = defaultdict(list)
-        HBOND_ELEMS    = {7, 8}        # N, O
-        HYDRO_ELEMS    = {6}            # C
-        HALOGEN_ELEMS  = {9, 17, 35, 53}  # F, Cl, Br, I
-
-        for li in ligand_atoms:
-            lpos  = conf.GetAtomPosition(li)
-            latom = mol.GetAtomWithIdx(li)
-            lelem = latom.GetAtomicNum()
-
-            for pi in protein_atoms:
-                ppos  = conf.GetAtomPosition(pi)
-                patom = mol.GetAtomWithIdx(pi)
-                pelem = patom.GetAtomicNum()
-                mi    = patom.GetMonomerInfo()
-                resn  = mi.GetResidueName().strip() if mi else "UNK"
-                resi  = mi.GetResidueSequenceNumber() if mi else 0
-                res_label = "{}{}".format(resn, resi)
-
-                dist = (
-                    (lpos.x - ppos.x) ** 2 +
-                    (lpos.y - ppos.y) ** 2 +
-                    (lpos.z - ppos.z) ** 2
-                ) ** 0.5
-
-                if dist > 5.0:
-                    continue
-
-                if lelem in HYDRO_ELEMS and pelem in HYDRO_ELEMS and dist <= 4.5:
-                    interactions["hydrophobic"].append({
-                        "RESNR": resi, "RESTYPE": resn, "residue": res_label, "DIST": dist
-                    })
-                if (lelem in HBOND_ELEMS or pelem in HBOND_ELEMS) and dist <= 3.5:
-                    interactions["hbond"].append({
-                        "RESNR": resi, "RESTYPE": resn, "residue": res_label,
-                        "DIST_D-A": dist
-                    })
-                if lelem in HALOGEN_ELEMS and pelem in HBOND_ELEMS and dist <= 3.5:
-                    interactions["halogen"].append({
-                        "RESNR": resi, "RESTYPE": resn, "residue": res_label, "DIST": dist
-                    })
-
-        # Deduplicate by residue
-        site_data = {}
-        for itype in INTERACTION_TYPES:
-            rows = interactions.get(itype, [])
-            if rows:
-                df = pd.DataFrame(rows).drop_duplicates(subset=["RESNR"])
-                site_data[itype] = df
-            else:
-                site_data[itype] = pd.DataFrame()
-
-        return {"AUTO_DETECTED": site_data} if site_data else {}
-
+        protein_atoms, ligand_atoms = _parse_pdb_atoms(complex_pdb)
     except Exception as e:
-        logger.warning("Geometry fallback failed: %s", e)
+        logger.warning("_geometry_fallback PDB parse failed (%s): %s",
+                       complex_pdb.name, e)
         return {}
+
+    if not ligand_atoms:
+        logger.warning(
+            "_geometry_fallback: 0 ligand atoms found in %s "
+            "(expected resname=LIG or chain=L). "
+            "Re-run Stage 4 to regenerate complex PDB files.",
+            complex_pdb.name)
+        return {}
+
+    if not protein_atoms:
+        logger.warning("_geometry_fallback: 0 protein atoms in %s",
+                       complex_pdb.name)
+        return {}
+
+    logger.debug("  geometry: protein=%d ligand=%d atoms",
+                 len(protein_atoms), len(ligand_atoms))
+
+    CARBON      = {"C"}
+    HBOND_SET   = {"N", "O", "F"}
+    HALOGEN_SET = {"F", "CL", "BR", "I"}
+    CHARGE_POS  = {"N"}
+    CHARGE_NEG  = {"O"}
+
+    raw = {t: [] for t in INTERACTION_TYPES}
+
+    for la in ligand_atoms:
+        lx, ly, lz = la["x"], la["y"], la["z"]
+        le = (la["elem"][:1] if la["elem"] else la["name"][:1]).upper()
+        le2 = (la["elem"][:2] if la["elem"] else la["name"][:2]).upper()
+
+        for pa in protein_atoms:
+            px, py, pz = pa["x"], pa["y"], pa["z"]
+            pe = (pa["elem"][:1] if pa["elem"] else pa["name"][:1]).upper()
+            dist = math.sqrt((lx-px)**2 + (ly-py)**2 + (lz-pz)**2)
+
+            if dist > 6.0:
+                continue
+
+            res_label = "{}{}".format(pa["resn"], pa["resi"])
+            row = {"RESNR": pa["resi"], "RESTYPE": pa["resn"],
+                   "residue": res_label, "DIST": round(dist, 3)}
+
+            if le in CARBON and pe in CARBON and dist <= 4.5:
+                raw["hydrophobic"].append(row)
+
+            if le in HBOND_SET and pe in HBOND_SET and dist <= 3.5:
+                r2 = dict(row); r2["DIST_D-A"] = round(dist, 3)
+                raw["hbond"].append(r2)
+
+            if ((le in CHARGE_POS and pe in CHARGE_NEG) or
+                    (le in CHARGE_NEG and pe in CHARGE_POS)) and dist <= 5.0:
+                raw["saltbridge"].append(row)
+
+            if le2 in HALOGEN_SET and pe in HBOND_SET and dist <= 3.5:
+                raw["halogen"].append(row)
+
+    site_data = {}
+    n_total = 0
+    for itype in INTERACTION_TYPES:
+        rows = raw[itype]
+        if rows:
+            df = pd.DataFrame(rows).drop_duplicates(subset=["RESNR"])
+            site_data[itype] = df
+            n_total += len(df)
+        else:
+            site_data[itype] = pd.DataFrame()
+
+    if n_total == 0:
+        logger.debug("geometry: no interactions in %s", complex_pdb.name)
+        return {}
+
+    logger.info("  Geometry: %d residue contacts in %s",
+                n_total, complex_pdb.name)
+    return {"GEOMETRY": site_data}
 
 
 def summarize_interactions(all_sites: Dict) -> Dict:
@@ -305,6 +336,20 @@ def _find_complex_pdb(row: pd.Series, gene: str) -> Optional[Path]:
             return f
 
     return None
+
+
+def _get_and_fix_complex_pdb(row, gene):
+    """
+    Find the complex PDB for this docking result and fix old column format if needed.
+    Returns Path or None.
+    """
+    cp = _find_complex_pdb(row, gene)
+    if cp is not None and cp.exists():
+        try:
+            _fix_old_complex_pdb(cp)
+        except Exception:
+            pass
+    return cp
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -688,6 +733,57 @@ def _interactions_to_records(
 # Main Stage 5 function
 # ══════════════════════════════════════════════════════════════════════════════
 
+
+
+def _fix_old_complex_pdb(pdb_path):
+    """
+    Fix old-format complex PDB files (written before the column-alignment fix)
+    where HETATM atom-name bled into the residue-name field,
+    producing 'G L ' instead of 'LIG' in cols 17-20.
+    Rewrites the file in-place with corrected column alignment.
+    Returns True if the file was fixed, False if already correct or no HETATM.
+    """
+    import re as _re
+    lines = pdb_path.read_text().splitlines()
+    fixed = []
+    changed = False
+
+    for line in lines:
+        if line.startswith('HETATM'):
+            resn = line[17:20].strip()
+            # Detect misaligned format: resname contains 'LIG' but spread wrong
+            full_rec = line[12:27]   # name + resname + chain area
+            if 'LIG' in full_rec and resn != 'LIG':
+                # Rebuild: extract coords (cols 30-54 should be correct)
+                try:
+                    x = float(line[30:38]); y = float(line[38:46]); z = float(line[46:54])
+                    serial = int(line[6:11])
+                    # Re-extract elem from cols 76-78
+                    elem_raw = line[76:78].strip() if len(line) >= 78 else 'C'
+                    ad4_to_elem = {
+                        'C':'C','A':'C','N':'N','NA':'N','OA':'O','OS':'O',
+                        'SA':'S','S':'S','H':'H','HD':'H','P':'P','F':'F',
+                        'CL':'Cl','CL':'Cl','BR':'Br','I':'I',
+                    }
+                    elem = ad4_to_elem.get(elem_raw, elem_raw[:1] or 'C')
+                    aname = line[12:13].strip() or 'C'
+                    new_line = (
+                        "HETATM{:5d}  {:<3s} LIG L   1    "
+                        "{:8.3f}{:8.3f}{:8.3f}  1.00 20.00          {:>2s}  "
+                    ).format(serial, aname, x, y, z, elem)
+                    fixed.append(new_line)
+                    changed = True
+                    continue
+                except (ValueError, IndexError):
+                    pass
+        fixed.append(line)
+
+    if changed:
+        pdb_path.write_text('\n'.join(fixed) + '\n')
+        logger.info("  Fixed old-format complex PDB: %s", pdb_path.name)
+    return changed
+
+
 def run_interaction_analysis(
     docking_results: pd.DataFrame,
     scored_data: Dict,
@@ -791,8 +887,8 @@ def run_interaction_analysis(
             pic50    = row.get("pIC50")
             qed      = row.get("qed")
 
-            # Locate complex PDB
-            complex_pdb = _find_complex_pdb(row, gene)
+            # Locate complex PDB (also fixes old column-misaligned format)
+            complex_pdb = _get_and_fix_complex_pdb(row, gene)
             if complex_pdb is None:
                 logger.debug("[%s/%s] complex PDB not found — skipping PLIP", gene, mol_id)
                 continue

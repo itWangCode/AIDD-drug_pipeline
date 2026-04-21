@@ -1,28 +1,10 @@
-2026-04-20 14:23:57 | stage1_data_acquisition | INFO     | Loaded 1 hub genes: ['EGFR']
-2026-04-20 14:23:58 | stage1_data_acquisition | INFO     |   EGFR → P00533 (Epidermal growth factor receptor)
-2026-04-20 14:23:59 | stage1_data_acquisition | INFO     | UniProt mapping: 1 genes, 1 mapped
-2026-04-20 14:23:59 | stage1_data_acquisition | INFO     | Valid UniProt mappings: 1/1
-2026-04-20 14:23:59 | stage1_data_acquisition | INFO     | 
+2026-04-21 12:16:44 | stage1_data_acquisition | INFO     | Loaded 1 hub genes: ['EGFR']
+2026-04-21 12:16:45 | stage1_data_acquisition | INFO     |   EGFR → P00533 (Epidermal growth factor receptor)
+2026-04-21 12:16:45 | stage1_data_acquisition | INFO     | UniProt mapping: 1 genes, 1 mapped
+2026-04-21 12:16:45 | stage1_data_acquisition | INFO     | Valid UniProt mappings: 1/1
+2026-04-21 12:16:45 | stage1_data_acquisition | INFO     | 
 ============================================================
-2026-04-20 14:23:59 | stage1_data_acquisition | INFO     | Processing: EGFR (UniProt: P00533)
-2026-04-20 14:24:01 | stage1_data_acquisition | INFO     | [EGFR] ChEMBL target: CHEMBL203
-2026-04-20 14:24:01 | stage1_data_acquisition | INFO     | Fetching bioactivities for CHEMBL203...
-2026-04-20 14:24:02 | stage1_data_acquisition | INFO     |   Total activities: 17036
-2026-04-20 14:25:37 | stage1_data_acquisition | INFO     | [EGFR] Preprocessed bioactivities: 9996
-2026-04-20 14:29:33 | stage1_data_acquisition | INFO     | [EGFR] Final compounds: 9979
-2026-04-21 11:47:32 | stage1_data_acquisition | INFO     | Loaded 1 hub genes: ['EGFR']
-2026-04-21 11:47:32 | stage1_data_acquisition | INFO     | Loaded UniProt mapping from checkpoint
-2026-04-21 11:47:32 | stage1_data_acquisition | INFO     | Valid UniProt mappings: 1/1
-2026-04-21 11:47:32 | stage1_data_acquisition | INFO     | [EGFR] Loaded from checkpoint: 9979 compounds
-2026-04-21 11:50:23 | stage1_data_acquisition | INFO     | Loaded 1 hub genes: ['EGFR']
-2026-04-21 11:50:23 | stage1_data_acquisition | INFO     | Loaded UniProt mapping from checkpoint
-2026-04-21 11:50:23 | stage1_data_acquisition | INFO     | Valid UniProt mappings: 1/1
-2026-04-21 11:50:23 | stage1_data_acquisition | INFO     | [EGFR] Loaded from checkpoint: 9979 compounds
-2026-04-21 12:04:56 | stage1_data_acquisition | INFO     | Loaded 1 hub genes: ['EGFR']
-2026-04-21 12:04:56 | stage1_data_acquisition | INFO     | Loaded UniProt mapping from checkpoint
-2026-04-21 12:04:56 | stage1_data_acquisition | INFO     | Valid UniProt mappings: 1/1
-2026-04-21 12:04:56 | stage1_data_acquisition | INFO     | [EGFR] Loaded from checkpoint: 9979 compounds
-2026-04-21 12:05:43 | stage1_data_acquisition | INFO     | Loaded 1 hub genes: ['EGFR']
-2026-04-21 12:05:43 | stage1_data_acquisition | INFO     | Loaded UniProt mapping from checkpoint
-2026-04-21 12:05:43 | stage1_data_acquisition | INFO     | Valid UniProt mappings: 1/1
-2026-04-21 12:05:43 | stage1_data_acquisition | INFO     | [EGFR] Loaded from checkpoint: 9979 compounds
+2026-04-21 12:16:45 | stage1_data_acquisition | INFO     | Processing: EGFR (UniProt: P00533)
+2026-04-21 12:16:48 | stage1_data_acquisition | INFO     | [EGFR] ChEMBL target: CHEMBL203
+2026-04-21 12:16:48 | stage1_data_acquisition | INFO     | Fetching bioactivities for CHEMBL203...
+2026-04-21 12:16:49 | stage1_data_acquisition | INFO     |   Total activities: 17036

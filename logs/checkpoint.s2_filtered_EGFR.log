@@ -1,5 +1,0 @@
-2026-04-20 14:30:52 | checkpoint.s2_filtered_EGFR | INFO     | Checkpoint saved: /Users/wangyang/Desktop/drug_pipeline/checkpoints/s2_filtered_EGFR.pkl
-2026-04-21 11:47:33 | checkpoint.s2_filtered_EGFR | INFO     | Checkpoint loaded: /Users/wangyang/Desktop/drug_pipeline/checkpoints/s2_filtered_EGFR.pkl
-2026-04-21 11:50:24 | checkpoint.s2_filtered_EGFR | INFO     | Checkpoint loaded: /Users/wangyang/Desktop/drug_pipeline/checkpoints/s2_filtered_EGFR.pkl
-2026-04-21 12:04:57 | checkpoint.s2_filtered_EGFR | INFO     | Checkpoint loaded: /Users/wangyang/Desktop/drug_pipeline/checkpoints/s2_filtered_EGFR.pkl
-2026-04-21 12:05:44 | checkpoint.s2_filtered_EGFR | INFO     | Checkpoint loaded: /Users/wangyang/Desktop/drug_pipeline/checkpoints/s2_filtered_EGFR.pkl
