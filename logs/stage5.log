@@ -1,0 +1,3 @@
+2026-04-21 12:05:45 | stage5_interactions  | INFO     | Stage 5: analysing 1 genes: ['EGFR']
+2026-04-21 12:05:45 | stage5_interactions  | INFO     | [EGFR] Analysing 10 top complexes (TOP_N_DOCKING=10)
+2026-04-21 12:05:45 | stage5_interactions  | INFO     |   [EGFR] CHEMBL5968640 | affinity=-11.092 | complex=CHEMBL5968640_complex.pdb

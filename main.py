@@ -139,8 +139,16 @@ def run_pipeline(
         logger.info("\n" + "─" * 60)
         logger.info("STAGE 4: PDB Retrieval & Cartesian-Product Docking")
         logger.info("─" * 60)
+        logger.info(
+            "  To dock against real PDB structures, place .pdb files in:\n"
+            "    data/raw/pdb/{GENE}/   (one folder per gene), OR\n"
+            "    data/raw/pdb/         (shared structures, all genes), OR\n"
+            "  Create data/raw/pdb_registry.json with:\n"
+            '    {"EGFR": [{"pdb_id":"3W32","pdb_path":"data/raw/pdb/3W32.pdb",'
+            '"ligand_resname":"W32"}]}'
+        )
         try:
-            # Load UniProt mapping
+            # Load UniProt mapping (kept for Stage 5 / reporting only)
             uniprot_path = DATA_DIR / "raw" / "uniprot_mapping.csv"
             if uniprot_path.exists():
                 uniprot_df = pd.read_csv(uniprot_path)
@@ -153,9 +161,10 @@ def run_pipeline(
                 scored_data, uniprot_df, force_rerun=(4 in force_rerun_stages)
             )
             results["stage4"] = docking_results
-            logger.info(f"Docking complete: {len(docking_results)} pairs analyzed")
+            n_dock = len(docking_results) if not docking_results.empty else 0
+            logger.info("Docking complete: %d compound-structure pairs", n_dock)
         except Exception as e:
-            logger.error(f"STAGE 4 FAILED: {e}\n{traceback.format_exc()}")
+            logger.error("STAGE 4 FAILED: %s\n%s", e, traceback.format_exc())
             docking_results = pd.DataFrame()
     else:
         logger.info("Stage 4: SKIPPED")

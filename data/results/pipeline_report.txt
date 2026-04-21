@@ -1,0 +1,35 @@
+======================================================================
+COMPUTATIONAL DRUG DISCOVERY PIPELINE — REPORT
+Generated: 2026-04-21 12:00:05
+======================================================================
+
+
+[STAGE1]
+  EGFR: 9979 compounds
+
+[STAGE2]
+  EGFR: 9979 compounds
+
+[STAGE3]
+  EGFR: AUC=0.933, R²=0.631
+
+[STAGE4]
+  120 docking results
+
+
+Figures generated:
+  EGFR_5UG9_docking.pdf
+  EGFR_8A27_docking.pdf
+  EGFR_8A2D_docking.pdf
+  EGFR_Neural_Network_regression.pdf
+  EGFR_Random_Forest_regression.pdf
+  EGFR_XGBoost_regression.pdf
+  EGFR_docking_heatmap.pdf
+  EGFR_filtering_funnel.pdf
+  EGFR_pic50_distribution.pdf
+  EGFR_pose_profiles.pdf
+  EGFR_property_distributions.pdf
+  EGFR_ro5_radar.pdf
+  EGFR_roc_curves.pdf
+  EGFR_top6_docking.pdf
+  pipeline_overview.pdf

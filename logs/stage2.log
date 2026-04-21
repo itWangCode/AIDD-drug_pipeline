@@ -1,32 +1,20 @@
-2026-04-20 04:10:47 | stage2_filtering     | INFO     | 
+2026-04-20 14:29:34 | stage2_filtering     | INFO     | 
 ============================================================
-[TRIM22] Starting filtration pipeline (n=300 compounds)
-2026-04-20 04:10:47 | stage2_filtering     | INFO     | [TRIM22] Valid SMILES: 300
-2026-04-20 04:10:47 | stage2_filtering     | INFO     | Calculating molecular properties...
-2026-04-20 04:10:48 | stage2_filtering     | INFO     | Properties calculated for 300 compounds
-2026-04-20 04:10:48 | stage2_filtering     | INFO     | Ro5 filter: 300/300 compounds pass (100.0%)
-2026-04-20 04:10:48 | stage2_filtering     | INFO     | ADMET filter: 285/300 compounds pass (95.0%)
-2026-04-20 04:10:48 | stage2_filtering     | INFO     | PAINS filter: 15 compounds flagged, 285 pass
-2026-04-20 04:10:49 | stage2_filtering     | INFO     | Brenk filter: 75 compounds flagged, 225 pass
-2026-04-20 04:10:49 | stage2_filtering     | INFO     | Combined filters: 210/300 compounds pass ALL filters (70.0%)
-2026-04-20 04:10:49 | stage2_filtering     | INFO     | [TRIM22] Filter summary: {'Raw (valid SMILES)': 300, 'After property calc.': 300, 'After Ro5': np.int64(300), 'After ADMET': 285, 'After PAINS': 285, 'Passed All Filters': np.int64(210)}
-2026-04-20 04:10:50 | stage2_filtering     | INFO     | Saved Ro5 radar: /home/claude/drug_pipeline/figures/TRIM22_ro5_radar.pdf
-2026-04-20 04:10:53 | stage2_filtering     | INFO     | Saved property distributions: /home/claude/drug_pipeline/figures/TRIM22_property_distributions.pdf
-2026-04-20 04:10:55 | stage2_filtering     | INFO     | Saved filtering funnel: /home/claude/drug_pipeline/figures/TRIM22_filtering_funnel.pdf
-2026-04-20 04:10:56 | stage2_filtering     | INFO     | Saved pIC50 distribution: /home/claude/drug_pipeline/figures/TRIM22_pic50_distribution.pdf
-2026-04-20 04:10:56 | stage2_filtering     | INFO     | 
-============================================================
-[PPP2R5A] Starting filtration pipeline (n=300 compounds)
-2026-04-20 04:10:57 | stage2_filtering     | INFO     | [PPP2R5A] Valid SMILES: 300
-2026-04-20 04:10:57 | stage2_filtering     | INFO     | Calculating molecular properties...
-2026-04-20 04:10:57 | stage2_filtering     | INFO     | Properties calculated for 300 compounds
-2026-04-20 04:10:57 | stage2_filtering     | INFO     | Ro5 filter: 300/300 compounds pass (100.0%)
-2026-04-20 04:10:57 | stage2_filtering     | INFO     | ADMET filter: 285/300 compounds pass (95.0%)
-2026-04-20 04:10:58 | stage2_filtering     | INFO     | PAINS filter: 15 compounds flagged, 285 pass
-2026-04-20 04:10:58 | stage2_filtering     | INFO     | Brenk filter: 75 compounds flagged, 225 pass
-2026-04-20 04:10:58 | stage2_filtering     | INFO     | Combined filters: 210/300 compounds pass ALL filters (70.0%)
-2026-04-20 04:10:58 | stage2_filtering     | INFO     | [PPP2R5A] Filter summary: {'Raw (valid SMILES)': 300, 'After property calc.': 300, 'After Ro5': np.int64(300), 'After ADMET': 285, 'After PAINS': 285, 'Passed All Filters': np.int64(210)}
-2026-04-20 04:10:59 | stage2_filtering     | INFO     | Saved Ro5 radar: /home/claude/drug_pipeline/figures/PPP2R5A_ro5_radar.pdf
-2026-04-20 04:11:03 | stage2_filtering     | INFO     | Saved property distributions: /home/claude/drug_pipeline/figures/PPP2R5A_property_distributions.pdf
-2026-04-20 04:11:04 | stage2_filtering     | INFO     | Saved filtering funnel: /home/claude/drug_pipeline/figures/PPP2R5A_filtering_funnel.pdf
-2026-04-20 04:11:05 | stage2_filtering     | INFO     | Saved pIC50 distribution: /home/claude/drug_pipeline/figures/PPP2R5A_pic50_distribution.pdf
+[EGFR] Starting filtration pipeline (n=9979 compounds)
+2026-04-20 14:29:36 | stage2_filtering     | INFO     | [EGFR] Valid SMILES: 9979
+2026-04-20 14:29:36 | stage2_filtering     | INFO     | Calculating molecular properties...
+2026-04-20 14:30:07 | stage2_filtering     | INFO     | Properties calculated for 9979 compounds
+2026-04-20 14:30:08 | stage2_filtering     | INFO     | Ro5 filter: 7148/9979 compounds pass (71.6%)
+2026-04-20 14:30:08 | stage2_filtering     | INFO     | ADMET filter: 4288/9979 compounds pass (43.0%)
+2026-04-20 14:30:49 | stage2_filtering     | INFO     | PAINS filter: 797 compounds flagged, 9182 pass
+2026-04-20 14:30:52 | stage2_filtering     | INFO     | Brenk filter: 6001 compounds flagged, 3978 pass
+2026-04-20 14:30:52 | stage2_filtering     | INFO     | Combined filters: 1635/9979 compounds pass ALL filters (16.4%)
+2026-04-20 14:30:52 | stage2_filtering     | INFO     | [EGFR] Filter summary: {'Raw (valid SMILES)': 9979, 'After property calc.': 9979, 'After Ro5': 7148, 'After ADMET': 4244, 'After PAINS': 3923, 'Passed All Filters': 1635}
+2026-04-20 14:30:54 | stage2_filtering     | INFO     | Saved Ro5 radar: /Users/wangyang/Desktop/drug_pipeline/figures/EGFR_ro5_radar.pdf
+2026-04-20 14:30:57 | stage2_filtering     | INFO     | Saved property distributions: /Users/wangyang/Desktop/drug_pipeline/figures/EGFR_property_distributions.pdf
+2026-04-20 14:30:58 | stage2_filtering     | INFO     | Saved filtering funnel: /Users/wangyang/Desktop/drug_pipeline/figures/EGFR_filtering_funnel.pdf
+2026-04-20 14:30:59 | stage2_filtering     | INFO     | Saved pIC50 distribution: /Users/wangyang/Desktop/drug_pipeline/figures/EGFR_pic50_distribution.pdf
+2026-04-21 11:47:33 | stage2_filtering     | INFO     | [EGFR] Loaded filtered data from checkpoint: 9979 → 1635 pass
+2026-04-21 11:50:24 | stage2_filtering     | INFO     | [EGFR] Loaded filtered data from checkpoint: 9979 → 1635 pass
+2026-04-21 12:04:57 | stage2_filtering     | INFO     | [EGFR] Loaded filtered data from checkpoint: 9979 → 1635 pass
+2026-04-21 12:05:44 | stage2_filtering     | INFO     | [EGFR] Loaded filtered data from checkpoint: 9979 → 1635 pass

@@ -1,0 +1,37 @@
+========================================================================
+  DOCKING RESULTS
+  Compound  : CHEMBL53711
+  PDB target: 5UG9
+========================================================================
+
+SMILES:
+  CN(C)c1cc2c(Nc3cccc(Br)c3)ncnc2cn1
+
+Binding Pocket:
+  Reference ligand / pocket : 8AM
+  Box center  : (-13.870, 14.934, -26.730) Angstrom
+  Box size    : 21.7 x 22.4 x 22.7 Angstrom
+  Atoms used  : 32
+
+Pose    Affinity (kcal/mol)     RMSD lb (A)     RMSD ub (A)   
+------------------------------------------------------------
+1       -8.828                  -8.828          0.000         
+2       -8.239                  -8.239          0.000         
+3       -8.232                  -8.232          0.000         
+4       -8.175                  -8.175          0.000         
+5       -7.442                  -7.442          0.000         
+6       -7.227                  -7.227          0.000         
+7       -7.173                  -7.173          0.000         
+8       -6.877                  -6.877          0.000         
+9       -6.497                  -6.497          0.000         
+
+Best binding affinity (Pose 1) : -8.828 kcal/mol
+
+Files in this directory:
+  CHEMBL53711_ligand.pdbqt         — prepared ligand PDBQT
+  CHEMBL53711_docked_all.pdbqt     — all 9 poses (multi-MODEL)
+  CHEMBL53711_pose_1.pdbqt         — best pose
+  CHEMBL53711_pose_9.pdbqt       — worst pose
+  CHEMBL53711_best_pose.pdbqt      — best pose (single MODEL)
+  CHEMBL53711_complex.pdb          — protein + best pose (PyMOL ready)
+========================================================================
