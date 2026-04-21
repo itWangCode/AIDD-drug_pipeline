@@ -16,3 +16,6 @@
 2026-04-21 12:37:26 | stage5_interactions  | INFO     | Saved: EGFR_CHEMBL5997498_network.pdf
 2026-04-21 12:37:27 | stage5_interactions  | INFO     | Saved: EGFR_CHEMBL5786982_network.pdf
 2026-04-21 12:37:29 | stage5_interactions  | INFO     | Saved: final_summary_all_genes.pdf
+2026-04-21 13:23:55 | stage5_interactions  | INFO     | Stage 5: analysing 1 genes: ['EGFR']
+2026-04-21 13:23:55 | stage5_interactions  | INFO     | [EGFR] Loaded interaction results from checkpoint
+2026-04-21 13:23:57 | stage5_interactions  | INFO     | Saved: final_summary_all_genes.pdf

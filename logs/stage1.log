@@ -10,3 +10,11 @@
 2026-04-21 12:16:49 | stage1_data_acquisition | INFO     |   Total activities: 17036
 2026-04-21 12:18:20 | stage1_data_acquisition | INFO     | [EGFR] Preprocessed bioactivities: 9996
 2026-04-21 12:21:58 | stage1_data_acquisition | INFO     | [EGFR] Final compounds: 9979
+2026-04-21 13:20:04 | stage1_data_acquisition | INFO     | Loaded 1 hub genes: ['EGFR']
+2026-04-21 13:20:04 | stage1_data_acquisition | INFO     | Loaded UniProt mapping from checkpoint
+2026-04-21 13:20:04 | stage1_data_acquisition | INFO     | Valid UniProt mappings: 1/1
+2026-04-21 13:20:04 | stage1_data_acquisition | INFO     | [EGFR] Loaded from checkpoint: 9979 compounds
+2026-04-21 13:28:57 | stage1_data_acquisition | INFO     | Loaded 1 hub genes: ['EGFR']
+2026-04-21 13:28:57 | stage1_data_acquisition | INFO     | Loaded UniProt mapping from checkpoint
+2026-04-21 13:28:57 | stage1_data_acquisition | INFO     | Valid UniProt mappings: 1/1
+2026-04-21 13:28:57 | stage1_data_acquisition | INFO     | [EGFR] Loaded from checkpoint: 9979 compounds

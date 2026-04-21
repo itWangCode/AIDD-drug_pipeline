@@ -1,1 +1,3 @@
 2026-04-21 12:16:45 | checkpoint.s1_uniprot | INFO     | Checkpoint saved: /Users/wangyang/Desktop/drug_pipeline/checkpoints/s1_uniprot.pkl
+2026-04-21 13:20:04 | checkpoint.s1_uniprot | INFO     | Checkpoint loaded: /Users/wangyang/Desktop/drug_pipeline/checkpoints/s1_uniprot.pkl
+2026-04-21 13:28:57 | checkpoint.s1_uniprot | INFO     | Checkpoint loaded: /Users/wangyang/Desktop/drug_pipeline/checkpoints/s1_uniprot.pkl

@@ -38,3 +38,62 @@
 ======================================================================
 2026-04-21 12:37:29 | main_pipeline        | INFO     | PIPELINE COMPLETE — Total time: 20.8 min
 2026-04-21 12:37:29 | main_pipeline        | INFO     | ======================================================================
+2026-04-21 13:20:04 | main_pipeline        | INFO     | ======================================================================
+2026-04-21 13:20:04 | main_pipeline        | INFO     | COMPUTATIONAL DRUG DISCOVERY PIPELINE STARTED
+2026-04-21 13:20:04 | main_pipeline        | INFO     | Start time: 2026-04-21 13:20:04
+2026-04-21 13:20:04 | main_pipeline        | INFO     | ======================================================================
+2026-04-21 13:20:04 | main_pipeline        | INFO     | 
+────────────────────────────────────────────────────────────
+2026-04-21 13:20:04 | main_pipeline        | INFO     | STAGE 1: Data Acquisition (Genes → UniProt → ChEMBL)
+2026-04-21 13:20:04 | main_pipeline        | INFO     | ────────────────────────────────────────────────────────────
+2026-04-21 13:20:05 | main_pipeline        | INFO     | Stage 1 complete: 1 genes with data
+2026-04-21 13:20:05 | main_pipeline        | INFO     |   EGFR: 9979 compounds, pIC50 range [1.6, 11.7]
+2026-04-21 13:20:05 | main_pipeline        | INFO     | 
+────────────────────────────────────────────────────────────
+2026-04-21 13:20:05 | main_pipeline        | INFO     | STAGE 2: Drug-Likeness Filtering (Ro5, ADMET, PAINS, Brenk)
+2026-04-21 13:20:05 | main_pipeline        | INFO     | ────────────────────────────────────────────────────────────
+2026-04-21 13:20:06 | main_pipeline        | INFO     |   EGFR: 1635/9979 passed all filters (16.4%)
+2026-04-21 13:20:06 | main_pipeline        | INFO     | 
+────────────────────────────────────────────────────────────
+2026-04-21 13:20:06 | main_pipeline        | INFO     | STAGE 3: ML/NN Activity Prediction & Compound Ranking
+2026-04-21 13:20:06 | main_pipeline        | INFO     | ────────────────────────────────────────────────────────────
+2026-04-21 13:23:55 | main_pipeline        | INFO     |   EGFR: best_clf=Random Forest, AUC=0.933, best_reg=XGBoost, R²=0.631
+2026-04-21 13:23:55 | main_pipeline        | INFO     | 
+────────────────────────────────────────────────────────────
+2026-04-21 13:23:55 | main_pipeline        | INFO     | STAGE 4: PDB Retrieval & Cartesian-Product Docking
+2026-04-21 13:23:55 | main_pipeline        | INFO     | ────────────────────────────────────────────────────────────
+2026-04-21 13:23:55 | main_pipeline        | INFO     |   To dock against real PDB structures, place .pdb files in:
+    data/raw/pdb/{GENE}/   (one folder per gene), OR
+    data/raw/pdb/         (shared structures, all genes), OR
+  Create data/raw/pdb_registry.json with:
+    {"EGFR": [{"pdb_id":"3W32","pdb_path":"data/raw/pdb/3W32.pdb","ligand_resname":"W32"}]}
+2026-04-21 13:23:55 | main_pipeline        | INFO     | Docking complete: 120 compound-structure pairs
+2026-04-21 13:23:55 | main_pipeline        | INFO     | 
+────────────────────────────────────────────────────────────
+2026-04-21 13:23:55 | main_pipeline        | INFO     | STAGE 5: Protein-Ligand Interaction Analysis (PLIP)
+2026-04-21 13:23:55 | main_pipeline        | INFO     | ────────────────────────────────────────────────────────────
+2026-04-21 13:23:58 | main_pipeline        | INFO     | Saved pipeline overview: /Users/wangyang/Desktop/drug_pipeline/figures/pipeline_overview.pdf
+2026-04-21 13:23:58 | main_pipeline        | INFO     | Pipeline report saved: /Users/wangyang/Desktop/drug_pipeline/data/results/pipeline_report.txt
+2026-04-21 13:23:58 | main_pipeline        | INFO     | 
+======================================================================
+2026-04-21 13:23:58 | main_pipeline        | INFO     | PIPELINE COMPLETE — Total time: 3.9 min
+2026-04-21 13:23:58 | main_pipeline        | INFO     | ======================================================================
+2026-04-21 13:28:57 | main_pipeline        | INFO     | ======================================================================
+2026-04-21 13:28:57 | main_pipeline        | INFO     | COMPUTATIONAL DRUG DISCOVERY PIPELINE STARTED
+2026-04-21 13:28:57 | main_pipeline        | INFO     | Start time: 2026-04-21 13:28:57
+2026-04-21 13:28:57 | main_pipeline        | INFO     | ======================================================================
+2026-04-21 13:28:57 | main_pipeline        | INFO     | 
+────────────────────────────────────────────────────────────
+2026-04-21 13:28:57 | main_pipeline        | INFO     | STAGE 1: Data Acquisition (Genes → UniProt → ChEMBL)
+2026-04-21 13:28:57 | main_pipeline        | INFO     | ────────────────────────────────────────────────────────────
+2026-04-21 13:28:57 | main_pipeline        | INFO     | Stage 1 complete: 1 genes with data
+2026-04-21 13:28:57 | main_pipeline        | INFO     |   EGFR: 9979 compounds, pIC50 range [1.6, 11.7]
+2026-04-21 13:28:57 | main_pipeline        | INFO     | 
+────────────────────────────────────────────────────────────
+2026-04-21 13:28:57 | main_pipeline        | INFO     | STAGE 2: Drug-Likeness Filtering (Ro5, ADMET, PAINS, Brenk)
+2026-04-21 13:28:57 | main_pipeline        | INFO     | ────────────────────────────────────────────────────────────
+2026-04-21 13:28:58 | main_pipeline        | INFO     |   EGFR: 1635/9979 passed all filters (16.4%)
+2026-04-21 13:28:58 | main_pipeline        | INFO     | 
+────────────────────────────────────────────────────────────
+2026-04-21 13:28:58 | main_pipeline        | INFO     | STAGE 3: ML/NN Activity Prediction & Compound Ranking
+2026-04-21 13:28:58 | main_pipeline        | INFO     | ────────────────────────────────────────────────────────────

@@ -183,3 +183,4 @@
 2026-04-21 12:37:01 | stage4_docking       | INFO     | Saved: EGFR_top6_docking.pdf
 2026-04-21 12:37:05 | stage4_docking       | INFO     | Saved: EGFR_pose_profiles.pdf
 2026-04-21 12:37:07 | stage4_docking       | INFO     | Saved: EGFR_docking_heatmap.pdf
+2026-04-21 13:23:55 | stage4_docking       | INFO     | [EGFR] Loaded docking from checkpoint (120 rows)

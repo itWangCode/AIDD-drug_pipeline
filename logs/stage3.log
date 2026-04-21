@@ -26,3 +26,80 @@
 2026-04-21 12:25:59 | stage3_ml            | INFO     | [EGFR] Best regressor: XGBoost (test R²=0.631)
 2026-04-21 12:26:00 | stage3_ml            | INFO     | Saved ROC curves: /Users/wangyang/Desktop/drug_pipeline/figures/EGFR_roc_curves.pdf
 2026-04-21 12:26:00 | stage3_ml            | WARNING  | [EGFR] Some plots failed: 'ErrorbarContainer' object has no attribute 'patches'
+2026-04-21 13:20:16 | stage3_ml            | INFO     | 
+============================================================
+[EGFR] ML: 1635 compounds
+2026-04-21 13:20:19 | stage3_ml            | INFO     | Fingerprints morgan: (1635, 2048) for 1635 compounds
+2026-04-21 13:20:19 | stage3_ml            | INFO     | Labels: 1025 active, 610 inactive (cutoff=6.3)
+2026-04-21 13:20:19 | stage3_ml            | INFO     | Scaffold split: 1389 train, 246 test
+2026-04-21 13:20:19 | stage3_ml            | INFO     | [EGFR] Training: Random Forest
+2026-04-21 13:20:24 | stage3_ml            | INFO     | [EGFR] Random Forest: CV_AUC=0.911+/-0.020 test_AUC=0.933
+2026-04-21 13:20:24 | stage3_ml            | INFO     | [EGFR] Training: XGBoost
+2026-04-21 13:20:29 | stage3_ml            | INFO     | [EGFR] XGBoost: CV_AUC=0.898+/-0.026 test_AUC=0.928
+2026-04-21 13:20:29 | stage3_ml            | INFO     | [EGFR] Training: SVM (RBF)
+2026-04-21 13:21:04 | stage3_ml            | INFO     | [EGFR] SVM (RBF): CV_AUC=0.881+/-0.018 test_AUC=0.896
+2026-04-21 13:21:04 | stage3_ml            | INFO     | [EGFR] Training: Neural Network
+2026-04-21 13:21:22 | stage3_ml            | INFO     | [EGFR] Neural Network: CV_AUC=0.883+/-0.025 test_AUC=0.894
+2026-04-21 13:21:22 | stage3_ml            | INFO     | [EGFR] Training: Gradient Boosting
+2026-04-21 13:22:07 | stage3_ml            | INFO     | [EGFR] Gradient Boosting: CV_AUC=0.887+/-0.025 test_AUC=0.910
+2026-04-21 13:22:12 | stage3_ml            | INFO     | [EGFR] Reg Random Forest: R2=0.624 MAE=0.669
+2026-04-21 13:22:13 | stage3_ml            | INFO     | Saved: EGFR_regression_Random_Forest.pdf
+2026-04-21 13:22:14 | stage3_ml            | INFO     | [EGFR] Reg XGBoost: R2=0.631 MAE=0.663
+2026-04-21 13:22:14 | stage3_ml            | INFO     | Saved: EGFR_regression_XGBoost.pdf
+2026-04-21 13:22:20 | stage3_ml            | INFO     | [EGFR] Reg Neural Network: R2=0.558 MAE=0.737
+2026-04-21 13:22:20 | stage3_ml            | INFO     | Saved: EGFR_regression_Neural_Network.pdf
+2026-04-21 13:22:20 | stage3_ml            | INFO     | [EGFR] SHAP for: Random Forest
+2026-04-21 13:22:20 | stage3_ml            | WARNING  | [SHAP] Failed on Random Forest: module 'numpy' has no attribute 'bool'.
+`np.bool` was a deprecated alias for the builtin `bool`. To avoid this error in existing code, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+    https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+2026-04-21 13:23:52 | stage3_ml            | INFO     | y-Scrambling: real=0.933, perm=0.510+/-0.051, p=0.0099
+2026-04-21 13:23:52 | stage3_ml            | INFO     | Saved: EGFR_y_scrambling.pdf
+2026-04-21 13:23:52 | stage3_ml            | INFO     | AD threshold (z-score p95): 0.2692
+2026-04-21 13:23:53 | stage3_ml            | INFO     | [EGFR] Ext val: AUC=0.823 BEDROC=1.000 EF1%=1.68 EF5%=1.68
+2026-04-21 13:23:54 | stage3_ml            | INFO     | Saved: EGFR_external_validation.pdf
+2026-04-21 13:23:54 | stage3_ml            | WARNING  | [EGFR] SHAP reliability: module 'numpy' has no attribute 'bool'.
+`np.bool` was a deprecated alias for the builtin `bool`. To avoid this error in existing code, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+    https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+2026-04-21 13:23:54 | stage3_ml            | INFO     | [EGFR] Top AD candidates: 40
+2026-04-21 13:23:55 | stage3_ml            | INFO     | Saved: EGFR_roc_curves.pdf
+2026-04-21 13:23:55 | stage3_ml            | INFO     | Saved: EGFR_cv_performance.pdf
+2026-04-21 13:23:55 | stage3_ml            | INFO     | [EGFR] Complete:
+  Best clf : Random Forest (AUC=0.933)
+  Best reg : XGBoost (R2=0.631)
+  Scaffold AUC: 0.823 | BEDROC: 1.000
+  y-scramble p: 0.0099 | AD coverage: 93.6%
+  AD top candidates: 40
+2026-04-21 13:29:02 | stage3_ml            | INFO     | 
+============================================================
+[EGFR] ML: 1635 compounds
+2026-04-21 13:29:05 | stage3_ml            | INFO     | Fingerprints morgan: (1635, 2048) for 1635 compounds
+2026-04-21 13:29:05 | stage3_ml            | INFO     | Labels: 1025 active, 610 inactive (cutoff=6.3)
+2026-04-21 13:29:06 | stage3_ml            | INFO     | Scaffold split: 1389 train, 246 test
+2026-04-21 13:29:06 | stage3_ml            | INFO     | [EGFR] Training: Random Forest
+2026-04-21 13:29:10 | stage3_ml            | INFO     | [EGFR] Random Forest: CV_AUC=0.911+/-0.020 test_AUC=0.933
+2026-04-21 13:29:10 | stage3_ml            | INFO     | [EGFR] Training: XGBoost
+2026-04-21 13:29:16 | stage3_ml            | INFO     | [EGFR] XGBoost: CV_AUC=0.898+/-0.026 test_AUC=0.928
+2026-04-21 13:29:16 | stage3_ml            | INFO     | [EGFR] Training: SVM (RBF)
+2026-04-21 13:29:52 | stage3_ml            | INFO     | [EGFR] SVM (RBF): CV_AUC=0.881+/-0.018 test_AUC=0.896
+2026-04-21 13:29:52 | stage3_ml            | INFO     | [EGFR] Training: Neural Network
+2026-04-21 13:30:11 | stage3_ml            | INFO     | [EGFR] Neural Network: CV_AUC=0.883+/-0.025 test_AUC=0.894
+2026-04-21 13:30:11 | stage3_ml            | INFO     | [EGFR] Training: Gradient Boosting
+2026-04-21 13:30:56 | stage3_ml            | INFO     | [EGFR] Gradient Boosting: CV_AUC=0.887+/-0.025 test_AUC=0.910
+2026-04-21 13:31:01 | stage3_ml            | INFO     | [EGFR] Reg Random Forest: R2=0.624 MAE=0.669
+2026-04-21 13:31:02 | stage3_ml            | INFO     | Saved: EGFR_regression_Random_Forest.pdf
+2026-04-21 13:31:03 | stage3_ml            | INFO     | [EGFR] Reg XGBoost: R2=0.631 MAE=0.663
+2026-04-21 13:31:03 | stage3_ml            | INFO     | Saved: EGFR_regression_XGBoost.pdf
+2026-04-21 13:31:09 | stage3_ml            | INFO     | [EGFR] Reg Neural Network: R2=0.558 MAE=0.737
+2026-04-21 13:31:10 | stage3_ml            | INFO     | Saved: EGFR_regression_Neural_Network.pdf
+2026-04-21 13:31:10 | stage3_ml            | INFO     | [EGFR] SHAP for: Random Forest
+2026-04-21 13:31:30 | stage3_ml            | INFO     | [SHAP] TreeExplainer Random Forest: shape=(200, 2048)
+2026-04-21 13:31:30 | stage3_ml            | INFO     | Saved: EGFR_shap_importance.pdf
+2026-04-21 13:31:32 | stage3_ml            | INFO     | Saved: EGFR_shap_beeswarm.pdf
+2026-04-21 13:31:32 | stage3_ml            | INFO     | Saved: EGFR_CHEMBL5207390_shap_waterfall.pdf
+2026-04-21 13:33:04 | stage3_ml            | INFO     | y-Scrambling: real=0.933, perm=0.510+/-0.051, p=0.0099
+2026-04-21 13:33:04 | stage3_ml            | INFO     | Saved: EGFR_y_scrambling.pdf
+2026-04-21 13:33:04 | stage3_ml            | INFO     | AD threshold (z-score p95): 0.2692
+2026-04-21 13:33:05 | stage3_ml            | INFO     | [EGFR] Ext val: AUC=0.823 BEDROC=1.000 EF1%=1.68 EF5%=1.68
+2026-04-21 13:33:06 | stage3_ml            | INFO     | Saved: EGFR_external_validation.pdf

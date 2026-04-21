@@ -1,1 +1,2 @@
 2026-04-21 12:36:47 | checkpoint.s4_dock_EGFR | INFO     | Checkpoint saved: /Users/wangyang/Desktop/drug_pipeline/checkpoints/s4_dock_EGFR.pkl
+2026-04-21 13:23:55 | checkpoint.s4_dock_EGFR | INFO     | Checkpoint loaded: /Users/wangyang/Desktop/drug_pipeline/checkpoints/s4_dock_EGFR.pkl

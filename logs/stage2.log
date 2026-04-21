@@ -14,3 +14,5 @@
 2026-04-21 12:23:13 | stage2_filtering     | INFO     | Saved property distributions: /Users/wangyang/Desktop/drug_pipeline/figures/EGFR_property_distributions.pdf
 2026-04-21 12:23:14 | stage2_filtering     | INFO     | Saved filtering funnel: /Users/wangyang/Desktop/drug_pipeline/figures/EGFR_filtering_funnel.pdf
 2026-04-21 12:23:15 | stage2_filtering     | INFO     | Saved pIC50 distribution: /Users/wangyang/Desktop/drug_pipeline/figures/EGFR_pic50_distribution.pdf
+2026-04-21 13:20:05 | stage2_filtering     | INFO     | [EGFR] Loaded filtered data from checkpoint: 9979 → 1635 pass
+2026-04-21 13:28:58 | stage2_filtering     | INFO     | [EGFR] Loaded filtered data from checkpoint: 9979 → 1635 pass

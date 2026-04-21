@@ -1,6 +1,6 @@
 ======================================================================
 COMPUTATIONAL DRUG DISCOVERY PIPELINE — REPORT
-Generated: 2026-04-21 12:37:29
+Generated: 2026-04-21 13:23:57
 ======================================================================
 
 
@@ -29,14 +29,21 @@ Figures generated:
   EGFR_Neural_Network_regression.pdf
   EGFR_Random_Forest_regression.pdf
   EGFR_XGBoost_regression.pdf
+  EGFR_cv_performance.pdf
   EGFR_docking_heatmap.pdf
+  EGFR_external_validation.pdf
   EGFR_filtering_funnel.pdf
   EGFR_interaction_heatmap.pdf
   EGFR_interaction_profile.pdf
   EGFR_pic50_distribution.pdf
   EGFR_pose_profiles.pdf
   EGFR_property_distributions.pdf
+  EGFR_regression_Neural_Network.pdf
+  EGFR_regression_Random_Forest.pdf
+  EGFR_regression_XGBoost.pdf
   EGFR_ro5_radar.pdf
   EGFR_roc_curves.pdf
   EGFR_top6_docking.pdf
+  EGFR_y_scrambling.pdf
   final_summary_all_genes.pdf
+  pipeline_overview.pdf
